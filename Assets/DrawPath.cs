@@ -33,6 +33,7 @@ public class DrawPath : MonoBehaviour
         {
             if (Physics.Raycast(Camera.ScreenPointToRay(Input.mousePosition), out _hit))
             {
+                Debug.Log(_hit.textureCoord);
                 _drawMaterial.SetVector("_Coordinate", new Vector4(_hit.textureCoord.x, _hit.textureCoord.y, 0, 0));
                 _drawMaterial.SetFloat("_Strength", BrushStrength);
                 _drawMaterial.SetFloat("_Size", BrushSize);
